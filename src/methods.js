@@ -23,8 +23,8 @@ const getCN2IdAsMap = () => corpus.reduce((acc, cur) => {
  */
 const getRangeFrom = loc => {  
     const startLine = loc.start.line - 1; // VSCode 行号从0开始  
-    const startCharacter = loc.start.column - 1; // VSCode 列号从0开始  
-    const endLine = loc.end.line - 1;  
+    const startCharacter = loc.start.column; // 经过测试，这里不需要-1 
+    const endLine = loc.end.line - 1; // VSCode 行号从0开始
     const endCharacter = loc.end.column; // end.column 是结束位置的下一个字符，所以不需要减1  
   
     const startPosition = new vscode.Position(startLine, startCharacter);  

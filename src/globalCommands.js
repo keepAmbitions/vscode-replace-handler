@@ -1,5 +1,5 @@
 const vscode = require('vscode');
-const { traverseAST } = require('./tasks')
+const { replaceAllTargets } = require('./tasks')
 /**
  * 注册全局指令
  * 这是全局指令的集合
@@ -18,6 +18,7 @@ exports.registerCommands = (context) => {
 	context.subscriptions.push(disposable);
 
     vscode.commands.registerCommand('replace-handler.replaceAll', () => {
-        console.log('replace-handler.replaceAll', traverseAST());
+        // console.log('replace-handler.replaceAll', );
+		replaceAllTargets();
     });
 }
